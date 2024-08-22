@@ -49,3 +49,9 @@ A chrome/edge extension to customise wasteof.money
     <td><img src="screenshots/custom_buttons.png" alt="Custom navbar links" width="400"></td>
   </tr>
 </table>
+
+---
+
+<sub>this project is not affiliated with wasteof.plus</sub>
+
+<sub>readme created by @silicone-fig</sub>
