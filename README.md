@@ -1,6 +1,6 @@
 # <img src="screenshots/ghbanner.png" alt="banner" width="50">&nbsp;&nbsp;wasteof-addons
 
-A chrome/edge extension to customise wasteof.money
+A chrome/edge extension to customize wasteof.money
 
 
 ## Features
