@@ -16,7 +16,7 @@ A chrome/edge extension to customise wasteof.money
 
 
 ## Installation
-(instructions also available at https://jamied132.github.io/wasteofaddons.html)
+(instructions also available at https://addons.wasteof.me/get)
 
 1. Unzip
     
