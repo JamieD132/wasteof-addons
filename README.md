@@ -1,4 +1,4 @@
-<img src="screenshots/ghbanner.png" alt="banner" width="500">
+<img src="screenshots/ghbanner.png" alt="banner" width="200">
 
 # wasteof-addons
 
