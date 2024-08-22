@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasteof Addons</title>
+    <style>
+        ::-webkit-scrollbar{
+            width: 10px;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-image: url(img/prg/rainbow.png);
+            background-position-y: 0%;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-track{
+            background-color: #f3f3fd;
+            border-radius: 10px;
+        }
+        html{
+            width: 400px;
+            height: 900px;
+            
+        }
+        html, body{
+            margin: 0px;
+            padding: 0px;
+            background-color: #f3f3fd;
+        }
+        .newheader{
+            background-color: rgb(145, 146, 233);
+            width: 100%;
+            height: 75px;
+            z-index: 100000;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            padding: 20px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            font-size: 14pt;
+            transition-duration: 0.5s;
+
+        }
+        .header{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            background-color: #9192e9;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            height: 75px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 1000000;
+            transition-duration: 0.5s;
+        }
+        .header img{
+            position: fixed;
+            top: 62.5px;
+            left: 62.5px;
+            transition-duration: 0.5s;
+            cursor: pointer;
+        }
+        .header h1, .header h2{
+            font-size: 25pt;
+            position: fixed;
+            top: 62.5px;
+            left: calc(100% - 200px);
+            margin: 0px;
+            font-weight: bolder;
+            transition-duration: 0.5s;
+        }
+        .header h2{
+            top: 120px;
+            color:#9192e9;
+            left: 170px;
+        }
+        .divider{
+            height: calc(20vh + 100px);
+        }
+        smal .divider{
+            height: 20vh;
+        }
+        .content{
+            padding: 50px 20px 20px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            height: 900px;
+        }
+        .content a{
+            text-decoration: none;
+            color: #9192e9;
+            font-weight: bolder;
+        }
+        .content .item img{
+            width: 150px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #abacd8;
+        }
+        .content .item .description {
+            padding: 10px;
+            background-color: #7d7fd0;
+            border-radius: 10px;
+            width: 230px;
+        }
+        .content .item item1 img{
+            
+        }
+        .content .item item1 .description {
+            position: absolute;
+            left: calc(125px + 20px);
+            top: calc(150px + (75px + 20vh));
+        }
+        .content .item item2 img{
+            position: absolute;
+            left: calc(225px);
+            top: calc(150px + (290px + 35vh));
+            z-index: 0;
+        }
+        .content .item item3 .description{
+            position: absolute;
+            left: calc(125px + 20px);
+            top: calc(720px + (75px + 20vh));
+        }
+        .content .item item4 img{
+            position: absolute;
+            left: calc(225px);
+            top: calc(720px + (290px + 35vh));
+            z-index: 0;
+        }
+        .content .item item4 .description{
+            position: relative;
+            z-index: 1000;
+        }
+        .content .item item5 .description{
+            position: absolute;
+            left: calc(125px + 20px);
+            top: calc(1320px + (75px + 20vh));
+        }
+        .content .item item6 img{
+            position: absolute;
+            left: calc(225px);
+            top: calc(1320px + (290px + 35vh));
+            z-index: 0;
+        }
+        .content .item item6 .description{
+            position: relative;
+            z-index: 1000;
+        }
+        .content .item item2 .description {
+            position: relative;
+            z-index: 1000;
+        }
+        .content .item .description h3{
+            height: 25px;
+            margin: 0px 0px 10px 0px;
+        }
+        .content .item .description p{
+            margin: 0px;
+        }
+        .content .item .description h3, p{
+            background-color: #f3f3fd;
+            width: 90%;
+            border-radius: 10px;
+            padding: 5%;
+            align-items: center;
+            text-align: center;
+        }
+
+
+        
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        <img src="img/fav/wom addons logo.png" width="100px">
+        <h1>
+            Wasteof
+        </h1>
+        <h2>
+            Addons
+        </h2>
+    </div>
+    <div class="newheader"></div>
+    <div class="divider"><p></p></div>
+    <div class="content">
+        <div class="item">
+            
+            <item1>
+                <a href="theme.html"><img src="img/prg/custom_theme.png"></a>
+                <div class="description">
+                        <h3>
+                            Customise the theme
+                        </h3>
+                        <p>
+                            Don't like the 'default blue' or 'dark mode?' Select a custom colour palete to use throughout wasteof.money.
+                        </p>
+                </div>
+            </item1>
+        </div>
+        <smal>
+            <div class="divider"><p></p></div>
+        </smal>
+        <div class="item">
+            <item2>
+                <a href="scroll.html"><img src="img/prg/custom_scrollbar.png"></a>
+                <div class="description">
+                        <h3>
+                            Custom scrollbars
+                        </h3>
+                        <p>
+                            Think wasteof's scrollbars are too skinny? Or not the right colour? Customise it however you like here.
+                        </p>
+                </div>
+            </item2>
+        </div>
+        <smal>
+            <div class="divider"><p></p></div>
+        </smal>
+        <div class="item">
+            <item3>
+                <a href="collapse.html"><img src="img/prg/collapse_posts.png"></a>
+                <div class="description">
+                        <h3>
+                            Collapsable posts
+                        </h3>
+                        <p>
+                            Don't like long posts taking up too much space? Add an option to collapse/expand any post on your feed.
+                        </p>
+                </div>
+            </item3>
+        </div>
+        <smal>
+            <div class="divider"><p></p></div>
+        </smal>
+        <div class="item">
+            <item4>
+                <a href="code.html"><img src="img/prg/white_links.png"></a>
+                <div class="description">
+                        <h3>
+                            White links in code block
+                        </h3>
+                        <p>
+                            Currently all links inside code blocks are black. Enabling this turns them white so you can read them.
+                        </p>
+                </div>
+            </item4>
+        </div>
+        <smal>
+            <div class="divider"><p></p></div>
+        </smal>
+        <div class="item">
+            <item5>
+                <a href="buttons.html"><img src="img/prg/custom_buttons.png"></a>
+                <div class="description">
+                        <h3>
+                            Custom header buttons
+                        </h3>
+                        <p>
+                            Ever wanted a button that goes straight to elaruu? Or somewhere else? Add it here!
+                        </p>
+                </div>
+            </item5>
+        </div>
+        <smal>
+            <div class="divider"><p></p></div>
+        </smal>
+        <div class="item">
+            <item6>
+                <a href="font.html"><img src="img/prg/custom_theme.png"></a>
+                <div class="description">
+                        <h3>
+                            Website Font
+                        </h3>
+                        <p>
+                            Change the fonts used throughout the website.
+                        </p>
+                </div>
+            </item6>
+        </div>
+        <smal>
+            <div class="divider"><p></p></div>
+        </smal>
+        <hr>
+        <br>
+        <p>
+            created by <a href="https://wasteof.money/users/jamied132" target="_blank">JamieD132</a>
+        </p>
+        <br>
+    </div>
+    <script src="home.js"></script>
+
+
+</body>
+</html>

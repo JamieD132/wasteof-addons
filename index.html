@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<body style="font-family: Arial, Helvetica, sans-serif; width: 550px;">
+  <style>
+    label{
+      --variable: pointer;
+      cursor: var(--variable);
+    }
+    .item{
+      background-color: lightgray;
+      border-radius: 10px;
+      padding: 5px;
+      margin: 5px;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+      transition-duration: 0.4s;
+      
+    }
+    .item:hover{
+      background-color: grey;
+    }
+    h1{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+
+<h1>Customise Colours</h1>
+
+  <div style="float: left; width: 50%;">
+    <div id="preview">
+      
+  	<div style="background-color: #6366f1; width: 90%; height: 40px;" id="head2">
+    	<div style="background-color: #ffffff; width: 70px; color: #6366f1; height: 20px; margin: 7px; padding: 3px; font-weight: bold; font-size: 20px; float: left;">w</div>
+        <div style="width: 50px; float:left; color: rgba(100,100,100,0);">Gap :)</div>
+        <div style="float:left; margin-top: 10px; margin-bottom: 10px; color:#ffffff;" id="tab2">Home</div>
+        <div style="width: 20px; float: left; margin-left: 20px;">
+            <img style="position: absolute;float: none; height: 25px; margin-top: 7px;" src="img/prg/bell.svg">
+            <div id="mesh2" style="background-color: #ef4444; border-radius: 10px; color: #ffffff;text-align: center; width: 25px; font-size: 11px; font-weight: bold; padding: 1px; margin-top: 1px; z-index: 100; position: absolute; height: 10px;"><p style="padding: 1px; padding-top: 0px; line-height: 0px; line-break: 0px; position: relative; top: -5px;" id="mest2">15</p></div>
+        </div>
+    </div> 
+    <div id="hbg2" style="background-color: #ffffff; width: 90%;">
+      <h2>Feed</h2>
+      <div id="feb2" style="background-color: #ffffff; height: 100px; border: 2px solid grey; border-radius: 20px; width: 80%; padding: 10px; padding-top: 0px;">
+        <p id="fet2" style="color: #6366f1; font-weight: bold; font-size: 13pt; position: absolute;">JamieD132<br><br><br>♥ ↻ 🗨</p>
+        <p id="fby2" style="position:relative; top: 30px;">You should follow me lol</p>
+        
+      </div>
+    </div>
+  </div>
+    <br>
+    <hr>
+    <div class="item">
+      <label for="corner">Box corner radius:</label>
+      <input type="number" min="0" max="100" name="corner" id="corner" value="20" onChange="updatecorner()">
+    </div>
+    <div class="item">
+      <label for="font">Website font:</label>
+      <select id="font" name="font" onchange="updatefont()">
+         <option id="Arial" style="font-family: Arial, Helvetica, sans-serif;">Arial</option>
+         <option id="Cambria" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Cambria</option>
+         <option id="Impact" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Impact</option>
+         <option id="Times New Roman" style="font-family: 'Times New Roman', Times, serif;">Times New Roman</option>
+         <option id="Cursive" style="font-family: cursive;">Cursive</option>
+         <option id="Gill Sans" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Gill Sans</option>
+         <option id="Lucida Sans" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Lucida Sans</option>
+         <option id="Segoe" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Segoe</option>
+         <option id="Monospace" style="font-family: monospace;">Monospace</option>
+      </select>
+    </div>
+  </div>
+  <div style="float: left; width: 50%;">
+    <div id="head3" class="item">
+      <label for="head">Header colour:</label>
+      <input type="color" id="head" name="head" value="#6366F1" onChange="update('head')"><br>
+    </div>
+    <div id="tab3" class="item">
+      <label for="tab">Tab text colour:</label>
+      <input type="color" id="tab" name="tab" value="#ffffff" onChange="update('tab')"><br>
+    </div>
+    <div id="mesh3" class="item">
+      <label for="mesh">Message count highlight:</label>
+      <input type="color" id="mesh" name="mesh" value="#EF4444" onChange="update('mesh')"><br>
+    </div>
+    <div id="mest3" class="item">
+      <label for="mest">Message count text:</label>
+      <input type="color" id="mest" name="mest" value="#ffffff" onChange="update('mest')"><br>
+    </div>
+    <div id="feb3" class="item">
+      <label for="feb">Box border colour:</label>
+      <input type="color" id="feb" name="feb" value="#808080" onChange="update('feb')"><br>
+    </div>
+    <div id="fet3" class="item">
+      <label for="fet">Box title colour:</label>
+      <input type="color" id="fet" name="fet" value="#6366F1" onChange="update('fet')"><br>
+    </div>
+    <div id="fby3" class="item">
+      <label for="fby">Box body text:</label>
+      <input type="color" id="fby" name="fby" value="#000000" onChange="update('fby')"><br>
+    </div>
+    <div id="fbg3" class="item">
+      <label for="fbg">Box background:</label>
+      <input type="color" id="fbg" name="fbg" value="#ffffff" onChange="update('feb')"><br>
+    </div>
+    <div id="hbg3" class="item">
+      <label for="hbg">Screen background:</label>
+      <input type="color" id="hbg" name="hbg" value="#ffffff" onChange="update('hbg')"><br>
+    </div>
+    
+
+  </div>
+  <script>
+    //feb fet fby fbg hbg
+    const change={
+      head: "backgroundColor= ", 
+      tab: "color= ", 
+      mesh: "backgroundColor= ", 
+      mest: "color= ",
+      feb: "borderColor=",
+      fet: "color=",
+      fby: "color=",
+      fbg: "backgroundColor= ",
+      hbg: "backgroundColor= "
+    }
+    function addlistener(id){
+      document.getElementById(id+'3').addEventListener("mouseover", function(){document.getElementById(id+'2').style.border="2px solid black"})
+      document.getElementById(id+'3').addEventListener("mouseleave", function(){document.getElementById(id+'2').style.border="none"})
+    }
+    addlistener("head");
+    addlistener("tab");
+    addlistener("mesh");
+    addlistener("mest");
+    addlistener("fet");
+    addlistener("fby");
+    addlistener("hbg");
+    function update(id){
+      eval("document.getElementById(id+'2').style."+eval("change."+id) + "'"+eval("document.getElementById(id).value")+"'");
+      //eval("document.getElementById(id+'2').style."+"change."+id + "document.getElementById(id).value");
+    }
+    function updatecorner(){
+      document.getElementById("feb2").style.borderRadius=document.getElementById('corner').value+"px";
+      return document.getElementById("feb2").style.borderRadius;
+    }
+    function updatefont(){
+      document.querySelector("body").style.fontFamily=document.getElementById(document.getElementById("font").value).innerHTML;
+    }
+  </script>
+
+</body>
+</html>

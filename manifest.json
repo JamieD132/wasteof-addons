@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Wasteof Addons",
+    "version": "1.0",
+    "description": "Fully customise the Wasteof.Money website",
+  
+    "icons": {
+      "16": "img/fav/16.png",
+      "32": "img/fav/32.png",
+      "48": "img/fav/48.png",
+      "128": "img/fav/128.png"
+    },
+    "content_scripts": [
+      {
+        "js": ["img/scripts/content.js"],
+        "matches": [
+          "https://wasteof.money/*"
+        ]
+      }
+    ],
+    "action": {
+      "default_popup": "home.html"
+    },
+    "permissions": ["storage"]
+  }
+  

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollbar Customiser</title>
+    <style>
+        ::-webkit-scrollbar{
+            width: 10px;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-image: url(img/prg/rainbow.png);
+            background-position-y: 0%;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-track{
+            background-color: #f3f3fd;
+            border-radius: 10px;
+        }
+        html{
+            width: 400px;
+            height: 900px;
+            
+        }
+        html, body{
+            margin: 0px;
+            padding: 0px;
+            background-color: #f3f3fd;
+        }
+        .header{
+            opacity: 0.9;
+            background-color: #9192e9;
+            width: 85%;
+            margin: 2.5%;
+            border-radius: 10px;
+            height: 37.5px;
+            z-index: 10;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            padding: 20px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            font-size: 14pt;
+        }
+        img{
+            float: left;
+            position: fixed;
+            top: 22.5px;
+            left: 22.5px;
+            z-index: 11;
+        }
+        .content{
+            padding: 50px 20px 20px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            height: 900px;
+        }
+        .content a{
+            text-decoration: none;
+            color: #9192e9;
+            font-weight: bolder;
+        }
+        .content h2{
+            font-size: 14pt;
+            color: #c5c5c5;
+            font-weight: bold;
+            display: inline;
+            transition-duration: 0.4s;
+        }
+        .content .disabled h3{
+            color: #c5c5c5;
+            font-weight: bold;
+            font-size:12pt;
+            transition-duration: 0.4s;
+        }
+        .content .disabled .palette, .content .disabled .presets, .content .disabled .saves{
+            background-color: #9192e9;
+            border-radius: 10px;
+            width: 80%;
+            margin: 5%;
+            padding: 10px;
+            transition-duration: 0.4s;
+            padding-left: auto;
+            padding-right: auto;
+        }
+        .content .disabled .palette input[type="color"]{
+            padding: 0;
+            margin: 0;
+            border-radius: 5px;
+            width: calc(9.09090909% - 0.45454545% - 0.45454545% - 1px);
+            cursor: not-allowed;
+        }
+        .content .disabled .palette input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+            margin: 0;
+        }
+        .content .disabled .palette input[type="color"]::-webkit-color-swatch {
+            padding: 0;
+            margin: 0;
+            border-radius: 5px;
+        }
+        .content .disabled .preset, .content .disabled .save{
+            width: 20%;
+            padding: 6px;
+            margin: 4px;
+            border-radius: 10px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border: 2px solid #9192e9;
+            color: #9192e9;
+            font-weight: bold;
+            font-size:8pt;
+            text-align: center;
+            background-color: white;
+        }
+        .content .disabled .save{
+            width: 40%;
+        }
+        .divider{
+            height: 10vh;
+        }
+        /* The switch - the box around the slider */
+        .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        }
+
+        /* The slider */
+        .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #c5c5c5;
+        -webkit-transition: .4s;
+        transition: .4s;
+        }
+
+        .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+        }
+
+        input:checked + .slider {
+        background-color: #9192e9;
+        }
+
+
+        input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+        border-radius: 34px;
+        }
+
+        .slider.round:before {
+        border-radius: 50%;
+        }
+        .footer a{
+            text-decoration: none;
+            color: #9192e9;
+            font-weight: bolder;
+        }
+        hr{
+            width: 80%;
+        }
+        .footer p{
+            font-weight: bold;
+            text-align: center;
+        }
+        .row .label{
+            font-weight: bold;
+        }
+        .row{
+            margin: 10px 10px 10px 10px;
+        }
+        .row input[type="number"]{
+            width: 50px;
+            display: inline;
+            border-radius: 10px;
+            border: 2px solid black;
+            background-color: white;
+            
+        }
+        .row input[type="checkbox"]{
+            width: 20px;
+            display: inline;
+            border-radius: 10px;
+            border: 2px solid #9192e9;
+            background-color: #9192e9;
+            padding: 4px;
+        }
+        .row{
+            margin: 15px 10px 15px 10px;
+        }
+        .container {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .container input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #f3f3fd;
+            border-radius: 5px;
+            border: 2px solid #f3f3fd;
+            outline: 2px solid #9192e9;
+        }
+
+        .container input:checked ~ .checkmark {
+            background-color: #9192e9; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        Collapsable posts
+    </div>
+    <a href="home.html"><img src="img/fav/wom addons logo.png" width="50px"></a>
+    <div class="divider">
+        <p></p>
+    </div>
+    <div class="content">
+        <label class="switch" id="click">
+            <input type="checkbox" id="switch">
+            <span class="slider round"></span>
+        </label>    
+        <h2>Enabled</h2>   
+        <div class="divider"></div>
+        <div class="disabled">
+            <h3>
+                Description:
+            </h3>
+            Enabling this allows you to collapse any post on your feed if it is taking up too much space. 
+            <smal><div class="divider"></div></smal>
+            <h3>
+                Options:
+            </h3>
+            <div id="options">
+                
+                <div class="row">
+                    <label for="collapse" class="container">Collapse all posts by default
+                        <input id="collapse" type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    
+                </div>
+                <div class="row">
+                    <label for="some" class="container">Collapse all posts exceding <input type="number" value="600" id="limit"> characters by default
+                        <input id="some" type="checkbox" checked>
+                        <span class="checkmark"></span>
+                        </label>
+                </div>
+            </div> 
+            <smal><div class="divider"></div></smal>
+            
+            
+            <h3>
+                Save:
+            </h3>
+            <p>(saving is automatic! only use this to save a preset to your computer if you want to switch between to configurations)</p>
+            <div class="saves">
+                <a id="export_a" href="" download="wom_theme_palette.json"><button class="save">Export</button></a>
+                <input type="file" id="import_i" name="import" style="display:none" accept=".json">
+                <label for="import_i" class="save" style="display: inline-block;">Import</button>
+            </div>
+        </div>
+    </div>
+    <div class="divider"><p></p></div>  
+    <div class="footer">
+    <hr>
+    <br>
+    <p>
+        created by <a href="https://wasteof.money/users/jamied132">JamieD132</a>
+    </p>
+    </div>
+    <br>
+    <script src="collapse.js"></script>
+</body>
+</html>
+<!--
+/*
+//DEFAULT//
+r.style.setProperty('--primary-50', '#eef2ff');
+r.style.setProperty('--primary-100', '#e0e7ff');
+r.style.setProperty('--primary-200', '#c7d2fe');
+r.style.setProperty('--primary-300', '#a5b4fc');
+r.style.setProperty('--primary-400', '#818cf8');
+r.style.setProperty('--primary-500', '#6366f1');
+r.style.setProperty('--primary-600', '#4f46e5');
+r.style.setProperty('--primary-700', '#4338ca');
+r.style.setProperty('--primary-800', '#3730a3');
+r.style.setProperty('--primary-900', '#312e81');
+r.style.setProperty('--primary-950', '#1e1b4b');
+*/-->
